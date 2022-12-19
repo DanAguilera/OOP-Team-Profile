@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DanAguilera/OOP-Team-Profile/issues"
   },
-  "homepage": "https://github.com/DanAguilera/OOP-Team-Profile#readme"
+  "homepage": "https://github.com/DanAguilera/OOP-Team-Profile#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
