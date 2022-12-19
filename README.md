@@ -28,3 +28,7 @@
     VIDEO LINKS:
     
     https://drive.google.com/file/d/1mD5K6BQYCFi2e5nCG8QEdFdFcJ0pNBJu/view
+    
+    LIVE LINK: 
+
+https://danaguilera.github.io/OOP-Team-Profile/
