@@ -25,4 +25,6 @@
     ## Questions
     If you have any questions about this repo, open an issue or contact me directly at [dan.aguilera97@gmail.com](mailto:dan.aguilera97@gmail.com). You can find more of my work at [DanAguilera](https://www.github.com/DanAguilera).
     
+    VIDEO LINKS:
+    
     https://drive.google.com/file/d/1mD5K6BQYCFi2e5nCG8QEdFdFcJ0pNBJu/view
