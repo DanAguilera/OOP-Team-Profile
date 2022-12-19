@@ -1,0 +1,19 @@
+{
+  "name": "oop-team-profile",
+  "version": "1.0.0",
+  "description": "OOP Team Profile Builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanAguilera/OOP-Team-Profile.git"
+  },
+  "author": "Daniel Aguilera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanAguilera/OOP-Team-Profile/issues"
+  },
+  "homepage": "https://github.com/DanAguilera/OOP-Team-Profile#readme"
+}
