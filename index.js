@@ -18,14 +18,14 @@ function runApp () {
       type: "list",
       message: "Which type of employee would you like to add to your team?",
       name: "addEmployeePrompt",
-      choices: ["SeniorDeveloper", "JuniorDeveloper", "Intern", "No more team members left to add to Site"]
+      choices: ["Senior Developer", "Junior Developer", "Intern", "No more team members left to add to Site"]
     }]).then(function (userInput) {
       switch(userInput.addEmployeePrompt) {
-        case "SeniorDeveloper":
-          addseniorDeveloper();
+        case "Senior Developer":
+          addSeniorDeveloper();
           break;
-        case "JuniorDeveloper":
-          addjuniorDeveloper();
+        case "Junior Developer":
+          addJuniorDeveloper();
           break;
         case "Intern":
           addIntern();
@@ -37,35 +37,35 @@ function runApp () {
     })
   }
 
-function addseniorDeveloper() {
+function addSeniorDeveloper() {
   inquirer.prompt ([
     
     {
       type: "input",
-      name: "SeniorDeveloperName",
+      name: "seniorDeveloperName",
       message: "What is the Senior Developer's name?"
     },
 
     {
       type: "input",
-      name: "SeniorDeveloperId",
+      name: "seniorDeveloperId",
       message: "What is the Senior Developer's employee ID number?"
     },
 
     {
       type: "input",
-      name: "SeniorDeveloperEmail",
+      name: "seniorDeveloperEmail",
       message: "What is the Senior Developer's email address?"
     },
 
     {
       type: "input",
-      name: "SeniorDeveloperOfficeNumber",
-      message: "What is the Senior Developer's office number?"
+      name: "seniorDeveloperGithub",
+      message: "What is the Senior Developer's Github?"
     }
 
   ]).then(answers => {
-    const seniorDeveloper = new seniorDeveloper(answers.seniorDeveloperName, answers.seniorDeveloperId, answers.seniorDeveloperEmail, answers.seniorDeveloperOfficeNumber);
+    const seniorDeveloper = new seniorDeveloper(answers.seniorDeveloperName, answers.seniorDeveloperId, answers.seniorDeveloperEmail, answers.seniorDeveloperGithub);
     teamArray.push(seniorDeveloper);
     createTeam();
   });
@@ -73,7 +73,7 @@ function addseniorDeveloper() {
 }
 
 
-function addjuniorDeveloper() {
+function addJuniorDeveloper() {
     inquirer.prompt([
       
       {
@@ -97,7 +97,7 @@ function addjuniorDeveloper() {
       {
         type: "input",
         name: "JuniorDeveloperGithub",
-        message: "What is the JuniorDeveloper's GitHub username?"
+        message: "What is the JuniorDeveloper's GitHub?"
       }
 
     ]).then(answers => {
