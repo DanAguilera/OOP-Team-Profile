@@ -11,7 +11,7 @@ const generateTeam = team => {
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">ID: ${SeniorDeveloper.getId()}</li>
+            <li class="list-group-item">Lang: ${SeniorDeveloper.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${SeniorDeveloper.getEmail()}">${SeniorDeveloper.getEmail()}</a></li>
             <li class="list-group-item">Office number: ${SeniorDeveloper.getOfficeNumber()}</li>
         </ul>
@@ -30,7 +30,7 @@ const generateTeam = team => {
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">ID: ${JuniorDeveloper.getId()}</li>
+            <li class="list-group-item">Lang: ${JuniorDeveloper.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${JuniorDeveloper.getEmail()}">${JuniorDeveloper.getEmail()}</a></li>
             <li class="list-group-item">GitHub: <a href="https://github.com/${JuniorDeveloper.getGithub()}" target="_blank" rel="noopener noreferrer">${JuniorDeveloper.getGithub()}</a></li>
         </ul>
@@ -49,7 +49,7 @@ const generateTeam = team => {
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">ID: ${intern.getId()}</li>
+            <li class="list-group-item">Lang: ${intern.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
             <li class="list-group-item">School: ${intern.getSchool()}</li>
         </ul>
@@ -62,11 +62,11 @@ const generateTeam = team => {
 
     html.push(team
         .filter(employee => employee.getRole() === "SeniorDeveloper")
-        .map(SeniorDeveloper => generateSeniorDeveloper(SeniorDeveloper))
+        .map(seniorDeveloper => generateseniorDeveloper(SeniorDeveloper))
     );
     html.push(team
         .filter(employee => employee.getRole() === "JuniorDeveloper")
-        .map(JuniorDeveloper => generateJuniorDeveloper(JuniorDeveloper))
+        .map(juniorDeveloper => generatejuniorDeveloper(JuniorDeveloper))
         .join("")
     );
     html.push(team

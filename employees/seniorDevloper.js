@@ -1,8 +1,8 @@
 const Employee = require("./Employee");
 
 class seniorDeveloper extends Employee {
-    constructor (name, id, email, Github) {
-        super (name, id, email);
+    constructor (name, lang, email, Github) {
+        super (name, lang, email);
         this.Github = Github;
     }
 

@@ -1,5 +1,5 @@
-const seniorDev = require("./employees/SeniorDeveloper");
-const juniorDev = require("./employees/JuniorDeveloper");
+const seniorDev = require("./employees/seniorDevloper");
+const juniorDev = require("./employees/juniorDeveloper");
 const Intern = require("./employees/intern");
 const inquirer = require("inquirer");
 const path = require("path");
@@ -48,8 +48,8 @@ function addSeniorDeveloper() {
 
     {
       type: "input",
-      name: "seniorDeveloperId",
-      message: "What is the Senior Developer's employee ID number?"
+      name: "seniorDeveloperLang",
+      message: "What is the Senior Developer's favorite coding language?"
     },
 
     {
@@ -65,7 +65,7 @@ function addSeniorDeveloper() {
     }
 
   ]).then(answers => {
-    const seniorDeveloper = new seniorDeveloper(answers.seniorDeveloperName, answers.seniorDeveloperId, answers.seniorDeveloperEmail, answers.seniorDeveloperGithub);
+    const seniorDeveloper = new seniorDeveloper(answers.seniorDeveloperName, answers.seniorDeveloperLang, answers.seniorDeveloperEmail, answers.seniorDeveloperGithub);
     teamArray.push(seniorDeveloper);
     createTeam();
   });
@@ -84,8 +84,8 @@ function addJuniorDeveloper() {
 
       {
         type: "input",
-        name: "JuniorDeveloperId",
-        message: "What is the JuniorDeveloper's employee ID number?" 
+        name: "JuniorDeveloperLang",
+        message: "What is the JuniorDeveloper's favorite coding language?" 
       },
 
       {
@@ -101,7 +101,7 @@ function addJuniorDeveloper() {
       }
 
     ]).then(answers => {
-      const juniorDeveloper = new juniorDeveloper(answers.juniorDeveloperName, answers.juniorDeveloperId, answers.juniorDeveloperEmail, answers.juniorDeveloperGithub);
+      const juniorDeveloper = new juniorDeveloper(answers.juniorDeveloperName, answers.juniorDeveloperLang, answers.juniorDeveloperEmail, answers.juniorDeveloperGithub);
       teamArray.push(juniorDeveloper);
       createTeam();
     });
@@ -119,8 +119,8 @@ function addJuniorDeveloper() {
 
       {
         type: "input",
-        name: "internId",
-        message: "What is the intern's employee ID number?" 
+        name: "internLang",
+        message: "What is the intern's favorite coding language?" 
       },
 
       {
@@ -136,7 +136,7 @@ function addJuniorDeveloper() {
       }
 
     ]).then(answers => {
-      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+      const intern = new Intern(answers.internName, answers.internLang, answers.internEmail, answers.internSchool);
       teamArray.push(intern);
       createTeam();
     });
