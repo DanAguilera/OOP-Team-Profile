@@ -1,5 +1,5 @@
-const Manager = require("./employees/manager");
-const Engineer = require("./employees/engineer");
+const seniorDev = require("./employees/SeniorDeveloper");
+const juniorDev = require("./employees/JuniorDeveloper");
 const Intern = require("./employees/intern");
 const inquirer = require("inquirer");
 const path = require("path");
@@ -16,16 +16,16 @@ function runApp () {
   function createTeam () {
     inquirer.prompt([{
       type: "list",
-      message: "What type of employee would you like to add to your team?",
+      message: "Which type of employee would you like to add to your team?",
       name: "addEmployeePrompt",
-      choices: ["Manager", "Engineer", "Intern", "No more team members are needed."]
+      choices: ["SeniorDeveloper", "JuniorDeveloper", "Intern", "No more team members left to add to Site"]
     }]).then(function (userInput) {
       switch(userInput.addEmployeePrompt) {
-        case "Manager":
-          addManager();
+        case "SeniorDeveloper":
+          addseniorDeveloper();
           break;
-        case "Engineer":
-          addEngineer();
+        case "JuniorDeveloper":
+          addjuniorDeveloper();
           break;
         case "Intern":
           addIntern();
@@ -36,74 +36,73 @@ function runApp () {
       }
     })
   }
-// OOP Functions
 
-function addManager() {
+function addseniorDeveloper() {
   inquirer.prompt ([
     
     {
       type: "input",
-      name: "managerName",
-      message: "What is the manager's name?"
+      name: "SeniorDeveloperName",
+      message: "What is the Senior Developer's name?"
     },
 
     {
       type: "input",
-      name: "managerId",
-      message: "What is the manager's employee ID number?"
+      name: "SeniorDeveloperId",
+      message: "What is the Senior Developer's employee ID number?"
     },
 
     {
       type: "input",
-      name: "managerEmail",
-      message: "What is the manager's email address?"
+      name: "SeniorDeveloperEmail",
+      message: "What is the Senior Developer's email address?"
     },
 
     {
       type: "input",
-      name: "managerOfficeNumber",
-      message: "What is the manager's office number?"
+      name: "SeniorDeveloperOfficeNumber",
+      message: "What is the Senior Developer's office number?"
     }
 
   ]).then(answers => {
-    const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
-    teamArray.push(manager);
+    const seniorDeveloper = new seniorDeveloper(answers.seniorDeveloperName, answers.seniorDeveloperId, answers.seniorDeveloperEmail, answers.seniorDeveloperOfficeNumber);
+    teamArray.push(seniorDeveloper);
     createTeam();
   });
 
 }
 
 
-function addEngineer() {
+function addjuniorDeveloper() {
     inquirer.prompt([
       
       {
         type: "input",
-        name: "engineerName",
-        message: "What is the engineer's name?"
+        name: "JuniorDeveloperName",
+        message: "What is the JuniorDeveloper's name?"
       },
 
       {
         type: "input",
-        name: "engineerId",
-        message: "What is the engineer's employee ID number?" 
+        name: "JuniorDeveloperId",
+        message: "What is the JuniorDeveloper's employee ID number?" 
       },
 
       {
         type: "input",
-        name: "engineerEmail",
-        message: "What is the engineer's email address?"
+        name: "JuniorDeveloperEmail",
+        message: "What is the JuniorDeveloper's email address?"
       },
 
       {
         type: "input",
-        name: "engineerGithub",
-        message: "What is the engineer's GitHub username?"
+        name: "JuniorDeveloperGithub",
+        message: "What is the JuniorDeveloper's GitHub username?"
       }
 
     ]).then(answers => {
-      const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
-      teamArray.push(engineer);
+      const juniorDeveloper = new juniorDeveloper(answers.juniorDeveloperName, answers.juniorDeveloperId, answers.juniorDeveloperEmail, answers.juniorDeveloperGithub);
+      teamArray.push(juniorDeveloper);
       createTeam();
     });
 
@@ -143,13 +142,6 @@ function addEngineer() {
     });
 
   }
-
-  // return to menu with option to add another team member create team
-
-  // Would you like to add a team member?
-  // Yes || No
-  // If Yes --> Then select an employee role for your new team member: Manager, Engineer, Intern
-  // If No --> Create Team
 
 
 function htmlBuilder () {
